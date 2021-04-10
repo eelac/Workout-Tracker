@@ -13,10 +13,15 @@ app.use(express.json());
 
 app.use(express.static("public"));
 
-mongoose.connect("mongodb://localhost/workout", {
-  useNewUrlParser: true,
-  useFindAndModify: false
-});
+mongoose.connect(
+  "mongodb+srv://Elton-Lac:Qn42D%26P%40Vnhisv@cluster0.na2th.mongodb.net/myFirstDatabase?retryWrites=true&w=majority",
+  {
+    useNewUrlParser: true,
+    useUnifiedTopology: true,
+    useCreateIndex: true,
+    useFindAndModify: false,
+  }
+);
 
 app.use(require("./routes/api.js"));
 app.use(require("./routes/view.js"));
